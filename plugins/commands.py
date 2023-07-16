@@ -40,13 +40,13 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('✨ ᴜᴘᴅᴀᴛᴇs', url='t.me/crazybotz'),
-                    InlineKeyboardButton('⚜️ ᴅᴇᴠ​', callback_data='owner_info')
+                    InlineKeyboardButton('ℵ ʙᴏᴛꜱ', url='t.me/crazybotz'),
+                    InlineKeyboardButton('✦ ᴅᴇᴠ​', callback_data='owner_info')
                 ],[
-                    InlineKeyboardButton('♻️ ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🎄 ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('₪ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('♜ ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💲 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💲', callback_data="shortlink_info")
+                    InlineKeyboardButton('₹ ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ ₹', callback_data="shortlink_info")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -88,13 +88,13 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('✨ ᴜᴘᴅᴀᴛᴇs', url='t.me/crazybotz'),
-                    InlineKeyboardButton('⚜️ ᴅᴇᴠ​', callback_data='owner_info')
+                    InlineKeyboardButton('ℵ ʙᴏᴛꜱ', url='t.me/crazybotz'),
+                    InlineKeyboardButton('✦ ᴅᴇᴠ​', callback_data='owner_info')
                 ],[
-                    InlineKeyboardButton('♻️ ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🎄 ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('₪ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('♜ ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💲 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💲', callback_data="shortlink_info")
+                    InlineKeyboardButton('₹ ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ ₹', callback_data="shortlink_info")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -270,7 +270,7 @@ async def start(client, message):
         files_ = await get_file_details(file_id)
         files = files_[0]
         g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
-        k = await client.send_message(chat_id=user,text=f"<b>📝 Nᴀᴍᴇ ➠ : @snfilmy{files.file_name} \n\n🔗 Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n♻️ Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: ⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇs.</i></b>", reply_markup=InlineKeyboardMarkup(
+        k = await client.send_message(chat_id=user,text=f"<b>📝 Nᴀᴍᴇ ➠ : @snfilmy {files.file_name} \n\n🔗 Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n♻️ Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: ⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇs.</i></b>", reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton('📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥', url=g)
