@@ -82,7 +82,7 @@ async def pm_text(bot, message):
     if user_id in ADMINS: return # ignore admins
     await message.reply_text(
          text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ <a href=https://t.me/Action_Movies_Group>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/smovierequestgroup")]])
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/picture_wallah")]])
     )
     await bot.send_message(
         chat_id=LOG_CHANNEL,
@@ -155,7 +155,7 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("△ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ △", url=f"https://telegram.me/{temp.U_NAME}")
+            InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url=f"https://telegram.me/picturewallah0")
         ])
     else:
         btn = []
