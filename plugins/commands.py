@@ -44,7 +44,7 @@ async def start(client, message):
                     InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
                     InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
-                  ]]v
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
