@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
 import os
-req_channel = int(os.environ.get('CRAZY_REQUEST','-1001915834318'))
+req_channel = int(os.environ.get('CRAZY_REQUEST','-1001688398732'))
 
 BUTTON = {}
 BUTTONS = {}
@@ -70,7 +70,7 @@ async def give_filter(client, message):
             return
         else:
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...</b>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/smovierequestgroup")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/picture_wallah")]])
     )
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
@@ -155,7 +155,7 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url=f"https://telegram.me/picturewallah0")
+            InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
         ])
     else:
         btn = []
@@ -452,7 +452,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         )
     # if ENABLE_SHORTLINK == True:
     btn.insert(0, [
-        InlineKeyboardButton("△ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ △", url=f"https://telegram.me/{temp.U_NAME}")
+        InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
     ])
     # else:
     #     btn.insert(0, [
@@ -1240,98 +1240,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_to_message_id=query.message.id
             )
 
-    elif query.data.startswith("show_option"):
-        ident, from_user = query.data.split("#")
-        btn = [[
-                InlineKeyboardButton("Uɴᴀᴠᴀɪʟᴀʙʟᴇ", callback_data=f"unavailable#{from_user}"),
-                InlineKeyboardButton("Uᴘʟᴏᴀᴅᴇᴅ", callback_data=f"uploaded#{from_user}")
-             ],[
-                InlineKeyboardButton("Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ", callback_data=f"already_available#{from_user}")
-              ]]
-        btn2 = [[
-                 InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
-               ]]
-        if query.from_user.id in ADMINS:
-            user = await client.get_users(from_user)
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Hᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ᴏᴘᴛɪᴏɴs !")
-        else:
-            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
-        
-    elif query.data.startswith("unavailable"):
-        ident, from_user = query.data.split("#")
-        btn = [[
-                InlineKeyboardButton("⚠️ Uɴᴀᴠᴀɪʟᴀʙʟᴇ ⚠️", callback_data=f"unalert#{from_user}")
-              ]]
-        btn2 = [[
-                 InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
-                 InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
-               ]]
-        if query.from_user.id in ADMINS:
-            user = await client.get_users(from_user)
-            reply_markup = InlineKeyboardMarkup(btn)
-            content = query.message.text
-            await query.message.edit_text(f"<b><strike>{content}</strike></b>")
-            await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Sᴇᴛ ᴛᴏ Uɴᴀᴠᴀɪʟᴀʙʟᴇ !")
-            try:
-                await client.send_message(chat_id=int(from_user), text=f"<b>Hᴇʏ {user.mention}, Sᴏʀʀʏ Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴜɴᴀᴠᴀɪʟᴀʙʟᴇ. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
-            except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<b>Hᴇʏ {user.mention}, Sᴏʀʀʏ Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴜɴᴀᴠᴀɪʟᴀʙʟᴇ. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
-        else:
-            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
-
-    elif query.data.startswith("uploaded"):
-        ident, from_user = query.data.split("#")
-        btn = [[
-                InlineKeyboardButton("✅ Uᴘʟᴏᴀᴅᴇᴅ ✅", callback_data=f"upalert#{from_user}")
-              ]]
-        btn2 = [[
-                 InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
-                 InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
-               ],[
-                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://t.me/+4nzja42ELQwzOWVl")
-               ]]
-        if query.from_user.id in ADMINS:
-            user = await client.get_users(from_user)
-            reply_markup = InlineKeyboardMarkup(btn)
-            content = query.message.text
-            await query.message.edit_text(f"<b><strike>{content}</strike></b>")
-            await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Sᴇᴛ ᴛᴏ Uᴘʟᴏᴀᴅᴇᴅ !")
-            try:
-                await client.send_message(chat_id=int(from_user), text=f"<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
-            except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
-        else:
-            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
-
-    elif query.data.startswith("already_available"):
-        ident, from_user = query.data.split("#")
-        btn = [[
-                InlineKeyboardButton("🟢 Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ 🟢", callback_data=f"alalert#{from_user}")
-              ]]
-        btn2 = [[
-                 InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
-                 InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
-               ],[
-                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://t.me/Action_Movies_Group")
-               ]]
-        if query.from_user.id in ADMINS:
-            user = await client.get_users(from_user)
-            reply_markup = InlineKeyboardMarkup(btn)
-            content = query.message.text
-            await query.message.edit_text(f"<b><strike>{content}</strike></b>")
-            await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Sᴇᴛ ᴛᴏ Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ !")
-            try:
-                await client.send_message(chat_id=int(from_user), text=f"<b>Hᴇʏ {user.mention}, Yᴏᴜʀ <a ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴏᴜʀ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
-            except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴏᴜʀ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
-        else:
-            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
-
     elif query.data.startswith("alalert"):
         ident, from_user = query.data.split("#")
         if int(query.from_user.id) == int(from_user):
@@ -1373,15 +1281,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('❌ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ❌', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('ℵ  ʙᴏᴛꜱ', url='t.me/crazybotz'),
-                    InlineKeyboardButton('✦  ᴅᴇᴠ​', callback_data='owner_info')
+                    InlineKeyboardButton('❓ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('₪  ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('♜  ᴀʙᴏᴜᴛ', callback_data='about')
-                ],[
-                    InlineKeyboardButton('₹  ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ  ₹', callback_data="shortlink_info")
+                    InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1436,8 +1341,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🍷 ᴄʟᴏɴᴇ 🍷', callback_data='helpx')
-        ], [
             InlineKeyboardButton('∙ ꜰɪʟᴛᴇʀs ∙', callback_data='filters'),
             InlineKeyboardButton('∙ ꜰɪʟᴇ sᴛᴏʀᴇ ∙', callback_data='store_file')
         ], [
@@ -1465,10 +1368,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('sᴛᴀᴛᴜs​', callback_data='stats'),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ​', callback_data='source')
-        ],[
-            InlineKeyboardButton('🛰 ʀᴇɴᴅᴇʀɪɴɢ ɪɴꜰᴏ ☁️', callback_data='rendering_info')
-        ],[
-            InlineKeyboardButton('© ᴅɪsᴄʟᴀɪᴍᴇʀ​ ©', callback_data='dics_btn')
         ],[
             InlineKeyboardButton('♙ ʜᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('ᴄʟᴏsᴇ ⊝', callback_data='close_data')
@@ -1608,43 +1507,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
-    elif query.data == "owner_info":
-        buttons = [[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('💭 ᴄᴏɴᴛᴀᴄᴛ​', url='t.me/heartlesssn')
-        ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.OWNER_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-
-    elif query.data == "smrati":
-        buttons = [[
-            InlineKeyboardButton('ʜɪɴᴅɪ', callback_data='smrat'),
-            InlineKeyboardButton('ᴇɴɢʟɪsʜ',callback_data='english')
-        ],[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ ⊝', callback_data='close_data')
-        ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.HELPZ_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
         
     elif query.data == "extra":
         buttons = [[
@@ -1659,44 +1521,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-
-    elif query.data == "english":
-        buttons = [[
-            InlineKeyboardButton('🖤 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='t.me/snfilmy')
-        ],[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ', callback_data='smrati'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ ⊝', callback_data='close_data')
-        ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.EARN2_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-
-    elif query.data == "smrat":
-        buttons = [[
-            InlineKeyboardButton('🖤 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='t.me/snfilmy')
-        ],[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ', callback_data='smrati'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ ⊝', callback_data='close_data')
-        ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.CRAZY_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1742,6 +1566,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
         )
+        await query.message.edit_text(
+            text="● ○ ○"
+        )
+        await query.message.edit_text(
+            text="● ● ○"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
         users = await db.total_users_count()
@@ -1766,6 +1599,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
         )
+        await query.message.edit_text(
+            text="● ○ ○"
+        )
+        await query.message.edit_text(
+            text="● ● ○"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
         users = await db.total_users_count()
@@ -1779,24 +1621,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "shortlink_info":
-            btn = [[
-                    InlineKeyboardButton('👨‍🏫 ​ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ', url='https://t.me/crazybotz/43')
-                ],[
-                    InlineKeyboardButton("⇍ ʙᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton('ᴄʟᴏsᴇ ⊝', callback_data='close_data')
-                  ]]
-            await client.edit_message_media(
-                query.message.chat.id, 
-                query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(script.SHORTLINK_INFO),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-            )
 
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
@@ -1912,7 +1736,7 @@ async def auto_filter(client, msg, spoll=False):
             files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
             settings = await get_settings(message.chat.id)
             if not files:
-                await client.send_message(req_channel,f"**⊲ #ᴘʀᴏ_ɪᴍᴅʙ_ʀᴇQᴜᴇꜱᴛᴇᴅ_ᴄᴏɴᴛᴇɴᴛ ⊳\n\n❄️ ᴄᴏɴᴛᴇɴᴛ ɴᴀᴍᴇ :`{search}`\n☀️ ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ**: {message.from_user.first_name}\n🔺 ᴜꜱᴇʀ ɪᴅ :{message.from_user.id}\n\n●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎**",
+                await client.send_message(req_channel,f"**⊲ #ʀᴇQᴜᴇꜱᴛᴇᴅ_ᴄᴏɴᴛᴇɴᴛ ⊳\n\n❄️ ᴄᴏɴᴛᴇɴᴛ ɴᴀᴍᴇ :`{search}`\n☀️ ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ**: {message.from_user.first_name}\n🔺 ᴜꜱᴇʀ ɪᴅ :{message.from_user.id}\n\n●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎**",
                                                                                                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("●︎ ᴜᴘʟᴏᴀᴅᴇᴅ ᴅᴏɴᴇ ●︎", callback_data="close_data")]]))
                 await m.delete()
                 if settings["spell_check"]:
@@ -1926,7 +1750,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_text(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋 '{search}' 🔎</i></b>")
+        m=await message.reply_text(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋.. '{search}' 🔎</i></b>")
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
     # if 'is_shortlink' in settings.keys():
@@ -1986,7 +1810,7 @@ async def auto_filter(client, msg, spoll=False):
     #         InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}")
     #     ])
         btn.insert(0, [
-            InlineKeyboardButton("△ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ △", url=f"https://telegram.me/{temp.U_NAME}")
+            InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
         ])
     # if ENABLE_TUTORIAL == True:
     #     btn.insert(0, [
