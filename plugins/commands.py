@@ -38,16 +38,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('❌ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ❌', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('ℵ  ʙᴏᴛꜱ', url='t.me/crazybotz'),
-                    InlineKeyboardButton('✦  ᴅᴇᴠ​', callback_data='owner_info')
+                    InlineKeyboardButton('❓ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('₪  ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('♜  ᴀʙᴏᴜᴛ', callback_data='about')
-                ],[
-                    InlineKeyboardButton('₹  ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ  ₹', callback_data="shortlink_info")
-                  ]]
+                    InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
+                  ]]v
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -86,15 +83,12 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('❌ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ❌', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('ℵ  ʙᴏᴛꜱ', url='t.me/crazybotz'),
-                    InlineKeyboardButton('✦  ᴅᴇᴠ​', callback_data='owner_info')
+                    InlineKeyboardButton('❓ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('₪  ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('♜  ᴀʙᴏᴜᴛ', callback_data='about')
-                ],[
-                    InlineKeyboardButton('₹  ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ  ₹', callback_data="shortlink_info")
+                    InlineKeyboardButton("👀 𝙟𝙤𝙞𝙣 𝙢𝙖𝙞𝙣 𝙘𝙝𝙖𝙣𝙣𝙚𝙡 👀", url='https://t.me/picturewallah0')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -145,7 +139,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/crazybotz')
+                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/picturewallah0')
                          ]
                         ]
                     )
@@ -161,7 +155,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/crazybotz')
+                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/picturewallah0')
                          ]
                         ]
                     )
@@ -254,7 +248,7 @@ async def start(client, message):
                     [
                         InlineKeyboardButton('📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥', url=g)
                     ], [
-                        InlineKeyboardButton('📌 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 📌', url=await get_tutorial(chat_id))
+                        InlineKeyboardButton('❓ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❓', url=await get_tutorial(chat_id))
                     ]
                 ]
             )
@@ -275,7 +269,7 @@ async def start(client, message):
                     [
                         InlineKeyboardButton('📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥', url=g)
                     ], [
-                        InlineKeyboardButton('📌 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 📌', url=await get_tutorial(chat_id))
+                        InlineKeyboardButton('❓ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❓', url=await get_tutorial(chat_id))
                     ]
                 ]
             )
@@ -322,7 +316,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                      InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/crazybotz')
+                      InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/picturewallah0')
                      ]
                     ]
                 )
@@ -347,7 +341,7 @@ async def start(client, message):
                         [
                             InlineKeyboardButton('📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥', url=g)
                         ], [
-                            InlineKeyboardButton('📌 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 📌', url=await get_tutorial(chat_id))
+                            InlineKeyboardButton('❓ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❓', url=await get_tutorial(chat_id))
                         ]
                     ]
                 )
@@ -377,7 +371,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                      InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/crazybotz')
+                      InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/picturewallah0')
                      ]
                     ]
                 )
@@ -431,7 +425,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/crazybotz')
+              InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/picturewallah0')
              ]
             ]
         )
