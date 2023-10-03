@@ -202,6 +202,7 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 𝒇𝒊𝒍𝒆 𝒔𝒊𝒛𝒆 - {file_size}
 ●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎
+@PictureWallahBot
 <a href='t.me/picturewallah0'>ᴄʜᴀɴɴᴇʟ</a></b>"""
     
     IMDB_TEMPLATE_TXT = """
