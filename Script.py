@@ -205,6 +205,7 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
  {file_name}
 
 ⚙️ sɪᴢᴇ : {file_size}"""
+@PictureWllahBot
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {query}
