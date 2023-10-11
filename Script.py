@@ -206,6 +206,7 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 ⚙️ sɪᴢᴇ : {file_size}"""
 @PictureWllahBot
+@flanker_bolt
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {query}
