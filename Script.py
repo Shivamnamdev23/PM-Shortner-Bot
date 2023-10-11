@@ -203,7 +203,7 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 𝒇𝒊𝒍𝒆 𝒔𝒊𝒛𝒆 - {file_size}
 ●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎●︎
 @PictureWallahBot
-<a href='t.me/picturewallah0'>ᴄʜᴀɴɴᴇʟ</a></b>"""
+<a href='t.me/flanker_bolt'>ᴄʜᴀɴɴᴇʟ</a></b>"""
     
     IMDB_TEMPLATE_TXT = """
 <b>​ʜᴇʏ {message.from_user.mention}, ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ʀᴇꜱᴜʟᴛ ꜰᴏʀ ʏᴏᴜʀ {query}
